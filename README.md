@@ -2,7 +2,7 @@
 
 ## Frontend Clone of Youtube
 
-# Tech used:-
+## Tech used:-
 
 * HTML
 * CSS
