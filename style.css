@@ -4,6 +4,10 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
+
+body {
+    width: 100vw;
+}
 a{
      text-decoration: none;
      color: #5a5a5a;
@@ -19,6 +23,7 @@ img{
 }
 nav{
     /* padding from top and bottom 10px and 2% from left and right */
+    width: 100vw;
     padding: 10px 2%;
     justify-content: space-between;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -29,8 +34,8 @@ nav{
 }
 .nav-right img{
     /* width means size of all 3 right icons set to 25px and margin from right gives space b/w icons are 30px */
-    width: 25px;
-    margin-right: 30px;
+    width: 1.5rem;
+    margin-right: 5px;
 }
 .nav-right .user-icon{
     width: 35px;
@@ -69,13 +74,21 @@ nav{
 .sidebar{
     /* width use for sidebar width-size */
     background: #fff;
-    width: 15%;
+    width: 20vw;
     height: 100vh;
     position: fixed;
     top: 0;
     padding-left: 2%;
+    padding-right: 2%;
     padding-top: 70px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
 .shortcut-links a img{
 /* margin-right gives margin from right side i.e space b/w icons and sidebar names. */
    width: 20px;
@@ -88,7 +101,6 @@ nav{
     align-items: center;
     margin-bottom: 20px;
     width: fit-content;
-    flex-wrap: wrap;
 }
 .shortcut-links a:first-child{
     color: #e82e28;
@@ -107,20 +119,20 @@ nav{
 .subscribed-list a{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
     width: fit-content;
     flex-wrap: wrap;
 }
 .subscribed-list a img{
     width: 25px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 0.5rem;
 }
 
 /* small-sidebar comes from js file */
 /* It works only when click on menu icon */
 .small-sidebar{
-    width: 5%;
+    width: 5vw;
 }
 /* when click on menu icon content written in p tag will be hidden */
 .small-sidebar a p{
@@ -139,14 +151,14 @@ nav{
 /* whole div container */
 .container{
     background: #f9f9f9;
-    padding-left: 16%;
+    padding-left: 22vw;
     padding-right: 1%;
     padding-top: 15px;
     padding-bottom: 10px;
 }
 /* It comes from js file */
 .large-container{
-    padding-left: 7%;
+    padding-left: 10vw;
 }
 .banner{
     width: 100%;
@@ -194,11 +206,8 @@ nav{
 
 /* When width less than or equal to 900 then menu icon and sidebar are hidden */
 @media(max-width: 900px){
-    .menu-icon{
-        display: none;
-    }
     .sidebar{
-        display: none;
+        font-size: 0.8rem;
     }
     .container .large-container{
         padding-left: 5%;
@@ -213,7 +222,7 @@ nav{
         width: 30px;
     }
     .nav-middle .search-box input{
-        width: 150px;
+        width: 30vw;
     }
     /* .nav-middle .mic-icon{
         display: none;
@@ -221,8 +230,21 @@ nav{
     .nav-left .logo{
         width: 100px;
     }
+
+    .small-sidebar{
+        width: 10vw;
+    }
 }
 
+@media (max-width: 500px){
+    .nav-middle .search-box input{
+        width: 20vw;
+    }
+    
+    .nav-left .logo{
+        width: 70px;
+    }
+}
 /* ------------play video page-------- */
 
 .play-container{
