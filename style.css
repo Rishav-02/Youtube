@@ -4,10 +4,16 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
+/* Remove vertical scrollbar */
+body::-webkit-scrollbar{
+  display: none;
+}
+body{
+    overflow-x: hidden;
+}
 a{
      text-decoration: none;
      color: #5a5a5a;
-
 }
 img{
     cursor: pointer;
@@ -73,13 +79,14 @@ nav{
     height: 100vh;
     position: fixed;
     top: 0;
-    padding-left: 2%;
+    padding-left: 0.3rem;
     padding-top: 70px;
+    
 }
 .shortcut-links a img{
 /* margin-right gives margin from right side i.e space b/w icons and sidebar names. */
    width: 20px;
-   margin-right: 5px;
+   margin-right: 2px;
 }
 .shortcut-links a{
     /* margin from bottom is 15px i.e space b/w Home,Explore,etc */
@@ -100,8 +107,8 @@ nav{
     width: 80%;
 }
 .subscribed-list h3{
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 12px;
+    margin: 14px -5px;
     color: #f3b409;
 }
 .subscribed-list a{
@@ -194,12 +201,12 @@ nav{
 
 /* When width less than or equal to 900 then menu icon and sidebar are hidden */
 @media(max-width: 900px){
-    .menu-icon{
+    /* .menu-icon{
         display: none;
-    }
-    .sidebar{
+    } */
+    /* .sidebar{
         display: none;
-    }
+    } */
     .container .large-container{
         padding-left: 5%;
         padding-right: 5%;
