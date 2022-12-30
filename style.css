@@ -332,11 +332,11 @@ Note: If the element is not a flexible item, the flex-basis property has no effe
     border-radius: 3px;
     cursor: pointer;
 }
-/* hover for cursor pointer touch and active when click the button */
-#but:hover{
+/* focus for cursor pointer click and active when click the button */
+#but:focus{
     background-color: #151615;
  }
-#but:hover::after{
+#but:focus::after{
     content: 'D';
  }
 .vid-description{
