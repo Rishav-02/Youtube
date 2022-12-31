@@ -4,16 +4,15 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-/* Remove vertical scrollbar */
-body::-webkit-scrollbar{
-  display: none;
-}
-body{
+
+body {
+    max-width: 100%;
     overflow-x: hidden;
 }
 a{
      text-decoration: none;
      color: #5a5a5a;
+
 }
 img{
     cursor: pointer;
@@ -25,6 +24,7 @@ img{
 }
 nav{
     /* padding from top and bottom 10px and 2% from left and right */
+    width: 100vw;
     padding: 10px 2%;
     justify-content: space-between;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -35,8 +35,8 @@ nav{
 }
 .nav-right img{
     /* width means size of all 3 right icons set to 25px and margin from right gives space b/w icons are 30px */
-    width: 25px;
-    margin-right: 30px;
+    width: 1.5rem;
+    margin-right: 0.8rem;
 }
 .nav-right .user-icon{
     width: 35px;
@@ -75,18 +75,25 @@ nav{
 .sidebar{
     /* width use for sidebar width-size */
     background: #fff;
-    width: 15%;
+    width: 20vw;
     height: 100vh;
     position: fixed;
     top: 0;
-    padding-left: 0.3rem;
+    padding-left: 2%;
+    padding-right: 2%;
     padding-top: 70px;
-    
+    overflow: hidden;
+    overflow-y: scroll;
 }
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
 .shortcut-links a img{
 /* margin-right gives margin from right side i.e space b/w icons and sidebar names. */
    width: 20px;
-   margin-right: 2px;
+   margin-right: 5px;
 }
 .shortcut-links a{
     /* margin from bottom is 15px i.e space b/w Home,Explore,etc */
@@ -95,7 +102,6 @@ nav{
     align-items: center;
     margin-bottom: 20px;
     width: fit-content;
-    flex-wrap: wrap;
 }
 .shortcut-links a:first-child{
     color: #e82e28;
@@ -107,27 +113,27 @@ nav{
     width: 80%;
 }
 .subscribed-list h3{
-    font-size: 12px;
-    margin: 14px -5px;
+    font-size: 14px;
+    margin: 10px 0;
     color: #f3b409;
 }
 .subscribed-list a{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
     width: fit-content;
     flex-wrap: wrap;
 }
 .subscribed-list a img{
     width: 25px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 0.5rem;
 }
 
 /* small-sidebar comes from js file */
 /* It works only when click on menu icon */
 .small-sidebar{
-    width: 5%;
+    width: 5vw;
 }
 /* when click on menu icon content written in p tag will be hidden */
 .small-sidebar a p{
@@ -146,14 +152,14 @@ nav{
 /* whole div container */
 .container{
     background: #f9f9f9;
-    padding-left: 16%;
+    padding-left: 22vw;
     padding-right: 1%;
     padding-top: 15px;
     padding-bottom: 10px;
 }
 /* It comes from js file */
 .large-container{
-    padding-left: 7%;
+    padding-left: 10vw;
 }
 .banner{
     width: 100%;
@@ -201,12 +207,9 @@ nav{
 
 /* When width less than or equal to 900 then menu icon and sidebar are hidden */
 @media(max-width: 900px){
-    /* .menu-icon{
-        display: none;
-    } */
-    /* .sidebar{
-        display: none;
-    } */
+    .sidebar{
+        font-size: 0.8rem;
+    }
     .container .large-container{
         padding-left: 5%;
         padding-right: 5%;
@@ -220,7 +223,7 @@ nav{
         width: 30px;
     }
     .nav-middle .search-box input{
-        width: 150px;
+        width: 30vw;
     }
     /* .nav-middle .mic-icon{
         display: none;
@@ -228,8 +231,25 @@ nav{
     .nav-left .logo{
         width: 100px;
     }
+
+    .small-sidebar{
+        width: 10vw;
+    }
 }
 
+@media (max-width: 550px){
+    .sidebar{
+        font-size: 0.6rem;
+    }
+
+    .nav-middle .search-box input{
+        width: 25vw;
+    }
+    
+    .nav-left .logo{
+        width: 70px;
+    }
+}
 /* ------------play video page-------- */
 
 .play-container{
@@ -332,11 +352,11 @@ Note: If the element is not a flexible item, the flex-basis property has no effe
     border-radius: 3px;
     cursor: pointer;
 }
-/* focus for cursor pointer click and active when click the button */
-#but:focus{
+/* hover for cursor pointer touch and active when click the button */
+#but:hover{
     background-color: #151615;
  }
-#but:focus::after{
+#but:hover::after{
     content: 'D';
  }
 .vid-description{
